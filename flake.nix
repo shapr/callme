@@ -1,7 +1,7 @@
 {
   description = "magic-cap is a command line utility for an always encrypted archive file type.";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     rust-overlay = { url = "github:oxalica/rust-overlay"; };
   };
@@ -29,42 +29,41 @@
               in
                 pkgs.mkShell {
                   packages = with pkgs; [
-                    rust-bin.nightly.latest.default
-                    upkgs.rust-analyzer
+                    # atkmm
+                    # cairo
+                    # cargo
+                    # clippy
+                    # egl-wayland
+                    # ffmpeg-full
+                    # gdk-pixbuf
+                    # gdk-pixbuf-xlib
+                    # gnome2.gtkglext
+                    # gnumake
+                    # libGL
+                    # libgbm
+                    # libsoup_3
+                    # lld
+                    # llvmPackages.clangUseLLVM
+                    # nodejs
+                    # pango
+                    # pipewire
+                    # pnpm
+                    # vala
+                    # wayland
+                    # wayland-protocols
+                    # wayland-scanner
+                    # webkitgtk_4_1
+                    # webp-pixbuf-loader
+                    # xorg.libxcb
                     alsa-lib
-                    atkmm
                     autoconf
                     automake
-                    cairo
-                    cargo
-                    clippy
-                    docker
-                    docker-compose
-                    egl-wayland
-                    ffmpeg-full
-                    gdk-pixbuf
-                    gdk-pixbuf-xlib
-                    gnome2.gtkglext
-                    gnumake
-                    libGL
-                    libgbm
-                    libsoup_3
+                    dbus
                     libtool
-                    llvmPackages.clangUseLLVM
-                    nodejs
-                    pango
-                    pipewire
                     pkg-config
                     pkgs.rustPlatform.bindgenHook
-                    pnpm
-                    vala
-                    wayland
-                    wayland-protocols
-                    wayland-scanner
-                    webkitgtk_4_1
-                    webp-pixbuf-loader
-                    xorg.libxcb
-                    lld
+                    rust-bin.nightly.latest.default
+                    upkgs.rust-analyzer
                   ];
                 };
     };

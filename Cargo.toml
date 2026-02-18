@@ -21,5 +21,5 @@ webrtc-audio-processing-sys = { git = "https://github.com/Frando/webrtc-audio-pr
 
 # this is needed for compiling to wasm
 # webrtc-util = { git = "https://github.com/Frando/webrtc.git", branch = "fix/util-feature-flags" }
-[build]
-rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
+# [build]
+# rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
