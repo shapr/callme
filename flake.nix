@@ -1,5 +1,5 @@
 {
-  description = "magic-cap is a command line utility for an always encrypted archive file type.";
+  description = "callme is an iroh demo.";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -13,7 +13,7 @@
         let
           pkgs = import nixpkgs { inherit system; };
             in pkgs.rustPlatform.buildRustPackage {
-              pname = "iroh_lan";
+              pname = "callme";
               buildInputs = [ ];
               version = "0.1.0";
               cargoLock.lockFile = ./Cargo.lock;
@@ -29,31 +29,6 @@
               in
                 pkgs.mkShell rec {
                   packages = with pkgs; [
-                    # atkmm
-                    # cairo
-                    # cargo
-                    # clippy
-                    # ffmpeg-full
-                    # freeglut
-                    # freeglut.dev
-                    # gdk-pixbuf
-                    # gdk-pixbuf-xlib
-                    # gnome2.gtkglext
-                    # gnumake
-                    # libgbm
-                    # libsoup_3
-                    # lld
-                    # llvmPackages.clangUseLLVM
-                    # nodejs
-                    # pango
-                    # pipewire
-                    # pnpm
-                    # vala
-                    # wayland-protocols
-                    # wayland-scanner
-                    # webkitgtk_4_1
-                    # webp-pixbuf-loader
-                    # xorg.libxcb
                     alsa-lib
                     autoconf
                     automake
@@ -72,7 +47,6 @@
                   shellHook = ''
                   export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath packages}
                   '';
-                  # LD_LIBRARY_PATH= "${pkgs.lib.makeLibraryPath buildInputs}";
                 };
     };
 }
