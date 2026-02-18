@@ -27,19 +27,19 @@
                   };
                   upkgs = import nixpkgs-unstable { inherit system; };
               in
-                pkgs.mkShell {
+                pkgs.mkShell rec {
                   packages = with pkgs; [
                     # atkmm
                     # cairo
                     # cargo
                     # clippy
-                    # egl-wayland
                     # ffmpeg-full
+                    # freeglut
+                    # freeglut.dev
                     # gdk-pixbuf
                     # gdk-pixbuf-xlib
                     # gnome2.gtkglext
                     # gnumake
-                    # libGL
                     # libgbm
                     # libsoup_3
                     # lld
@@ -49,7 +49,6 @@
                     # pipewire
                     # pnpm
                     # vala
-                    # wayland
                     # wayland-protocols
                     # wayland-scanner
                     # webkitgtk_4_1
@@ -59,12 +58,21 @@
                     autoconf
                     automake
                     dbus
+                    egl-wayland
+                    libGL
                     libtool
+                    libxkbcommon
                     pkg-config
                     pkgs.rustPlatform.bindgenHook
                     rust-bin.nightly.latest.default
                     upkgs.rust-analyzer
+                    wayland
+                    wayland.dev
                   ];
+                  shellHook = ''
+                  export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath packages}
+                  '';
+                  # LD_LIBRARY_PATH= "${pkgs.lib.makeLibraryPath buildInputs}";
                 };
     };
 }
