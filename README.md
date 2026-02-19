@@ -1,3 +1,9 @@
+# NixOS notes:
+
+I got this to work in the devshell with `cargo run --bin callme-cli`.
+
+While callme-egui also builds and runs, it crashes when trying to paste in a node ID, so YMMV.
+
 # callme
 
 Audio calls with Iroh!
@@ -28,4 +34,3 @@ at your option.
 ## Contribution
 
 Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this project by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
-
